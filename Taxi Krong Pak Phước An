@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Taxi Cường EaYông - Taxi Krông Pắc</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f1faF3;
+    color:#064d2d;
+}
+
+a{
+    text-decoration:none;
+}
+
+/* ===== HEADER ===== */
+
+header{
+    background:#00652f;
+    color:white;
+    padding:14px 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-car{
+    font-size:42px;
+}
+
+.logo-text{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.logo-text span{
+    color:#ffe900;
+}
+
+nav{
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    color:white;
+    font-weight:bold;
+    padding:10px;
+}
+
+nav a:hover{
+    color:#ffe900;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+    min-height:500px;
+    background:
+    linear-gradient(90deg,
+    rgba(0,100,45,.95) 0%,
+    rgba(0,100,45,.7) 45%,
+    rgba(0,100,45,.15) 100%),
+    url("banner.png");
+
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    padding:50px 7%;
+}
+
+.hero-content{
+    max-width:520px;
+    color:white;
+}
+
+.hero h1{
+    font-size:70px;
+    font-weight:900;
+    font-style:italic;
+}
+
+.hero h2{
+    color:#fff000;
+    font-size:44px;
+    margin-bottom:20px;
+}
+
+.hero-badge{
+    display:inline-block;
+    border:2px solid white;
+    border-radius:12px;
+    padding:10px 20px;
+    font-size:21px;
+    font-weight:bold;
+    margin-bottom:18px;
+}
+
+.hero p{
+    font-size:22px;
+    line-height:1.6;
+    font-weight:bold;
+}
+
+.phone{
+    display:inline-block;
+    margin-top:20px;
+    padding:15px 25px;
+    border:2px solid white;
+    border-radius:14px;
+    font-size:34px;
+    font-weight:bold;
+    color:white;
+}
+
+/* ===== BUTTON ===== */
+
+.buttons{
+    display:flex;
+    gap:15px;
+    margin-top:18px;
+}
+
+.btn{
+    padding:16px 25px;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:bold;
+    display:inline-block;
+}
+
+.btn-call{
+    background:#fff000;
+    color:#075b2c;
+}
+
+.btn-zalo{
+    background:white;
+    color:#075b2c;
+}
+
+.btn:hover{
+    transform:scale(1.03);
+}
+
+/* ===== SECTION ===== */
+
+section{
+    padding:45px 5%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:36px;
+    color:#076332;
+    margin-bottom:30px;
+}
+
+/* ===== SERVICES ===== */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:20px;
+    text-align:center;
+}
+
+.service{
+    padding:20px 10px;
+}
+
+.icon{
+    width:75px;
+    height:75px;
+    margin:auto;
+    background:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:38px;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+}
+
+.service h3{
+    margin-top:15px;
+    font-size:17px;
+    line-height:1.4;
+}
+
+/* ===== CAR ===== */
+
+.car-section{
+    background:#dff2e4;
+    border:1px solid #8bc79b;
+    border-radius:15px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:30px;
+}
+
+.car-image{
+    width:100%;
+    max-width:600px;
+    border-radius:15px;
+}
+
+.car-info h2{
+    font-size:38px;
+    color:#075b2c;
+    margin-bottom:20px;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.feature{
+    font-size:18px;
+    font-weight:bold;
+}
+
+.plate{
+    display:inline-block;
+    background:#075b2c;
+    color:white;
+    padding:13px 22px;
+    border-radius:8px;
+    margin-top:25px;
+    font-size:21px;
+}
+
+.plate span{
+    color:#fff000;
+    font-weight:bold;
+}
+
+/* ===== AREA ===== */
+
+.area{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+    align-items:stretch;
+}
+
+.area-info{
+    background:white;
+    border-radius:15px;
+    padding:30px;
+    border:1px solid #a4d4ae;
+}
+
+.area-info h2{
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.area-info p{
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:15px;
+}
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.tag{
+    border:1px solid #075b2c;
+    border-radius:20px;
+    padding:8px 15px;
+    background:#f7fff8;
+}
+
+.map{
+    border-radius:15px;
+    overflow:hidden;
+    min-height:350px;
+}
+
+.map iframe{
+    width:100%;
+    height:100%;
+    min-height:350px;
+    border:0;
+}
+
+/* ===== BOOKING ===== */
+
+.booking{
+    background:#00652f;
+    color:white;
+    border-radius:15px;
+    padding:30px;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    text-align:center;
+}
+
+.booking h2{
+    font-size:36px;
+}
+
+.booking-phone{
+    color:#fff000;
+    font-size:30px;
+    font-weight:bold;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+    background:#004c25;
+    color:white;
+    padding:25px 5%;
+    display:flex;
+    justify-content:space-around;
+    gap:20px;
+}
+
+footer div{
+    text-align:center;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:900px){
+
+    header{
+        padding:12px 15px;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .logo-text{
+        font-size:18px;
+    }
+
+    .logo-car{
+        font-size:30px;
+    }
+
+    .hero{
+        min-height:550px;
+        padding:35px 20px;
+        background-position:center;
+    }
+
+    .hero h1{
+        font-size:50px;
+    }
+
+    .hero h2{
+        font-size:32px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .phone{
+        font-size:25px;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        text-align:center;
+    }
+
+    .services{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .car-section{
+        grid-template-columns:1fr;
+    }
+
+    .car-info h2{
+        font-size:30px;
+    }
+
+    .area{
+        grid-template-columns:1fr;
+    }
+
+    .booking{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    footer{
+        flex-direction:column;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="logo">
+        <div class="logo-car">🚕</div>
+
+        <div class="logo-text">
+            TAXI <span>CƯỜNG</span> EAYÔNG
+        </div>
+    </div>
+
+    <nav>
+        <a href="#home">TRANG CHỦ</a>
+        <a href="#services">DỊCH VỤ</a>
+        <a href="#car">XE ACCENT 2024</a>
+        <a href="#area">KHU VỰC</a>
+        <a href="#contact">LIÊN HỆ</a>
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>TAXI</h1>
+
+        <h2>CƯỜNG EAYÔNG</h2>
+
+        <div class="hero-badge">
+            ACCENT 2024 – PHỤC VỤ TẬN NƠI
+        </div>
+
+        <p>
+            Tận Tâm – Nhanh Chóng<br>
+            Chuyên Nghiệp – An Toàn
+        </p>
+
+        <a class="phone" href="tel:0865759493">
+            ☎ 086 575 9493
+        </a>
+
+        <div class="buttons">
+
+            <a class="btn btn-call"
+               href="tel:0865759493">
+                ☎ GỌI TAXI NGAY
+            </a>
+
+            <a class="btn btn-zalo"
+               href="https://zalo.me/0865759493"
+               target="_blank">
+                💬 NHẮN ZALO
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services">
+
+    <h2 class="section-title">
+        🚕 DỊCH VỤ TAXI
+    </h2>
+
+    <div class="services">
+
+        <div class="service">
+            <div class="icon">🚕</div>
+            <h3>Đưa đón<br>tận nơi</h3>
+        </div>
+
+        <div class="service">
+            <div class="icon">📍</div>
+            <h3>Đi nội thành –<br>ngoại thành</h3>
+        </div>
+
+        <div class="service">
+            <div class="icon">🛣️</div>
+            <h3>Đi huyện,<br>đi tỉnh</h3>
+        </div>
+
+        <div class="service">
+            <div class="icon">✈️</div>
+            <h3>Đưa đón<br>sân bay</h3>
+        </div>
+
+        <div class="service">
+            <div class="icon">👨‍👩‍👧</div>
+            <h3>Đưa đón khách<br>theo yêu cầu</h3>
+        </div>
+
+        <div class="service">
+            <div class="icon">🛡️</div>
+            <h3>Phục vụ nhanh chóng,<br>an toàn</h3>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CAR ================= -->
+
+<section id="car">
+
+    <div class="car-section">
+
+        <div>
+            <!-- Đổi car.png thành ảnh xe của bạn -->
+            <img
+                src="car.png"
+                class="car-image"
+                alt="Taxi Accent 2024">
+        </div>
+
+        <div class="car-info">
+
+            <h2>XE ACCENT 2024</h2>
+
+            <div class="features">
+
+                <div class="feature">✨ Xe sạch sẽ</div>
+                <div class="feature">🛡️ An toàn</div>
+
+                <div class="feature">❄️ Máy lạnh mát</div>
+                <div class="feature">⭐ Chuyên nghiệp</div>
+
+                <div class="feature">👤 Phục vụ tận tâm</div>
+                <div class="feature">⛽ Tiết kiệm nhiên liệu</div>
+
+            </div>
+
+            <div class="plate">
+                BIỂN SỐ:
+                <span>47A-779.95</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= AREA ================= -->
+
+<section id="area">
+
+    <div class="area">
+
+        <div class="area-info">
+
+            <h2>📍 KHU VỰC PHỤC VỤ</h2>
+
+            <p>
+                <b>Ea Yông và các khu vực lân cận</b>
+            </p>
+
+            <p>
+                Nhận đưa đón khách đi gần – đi xa –
+                đi tỉnh theo yêu cầu.
+            </p>
+
+            <div class="tags">
+
+                <span class="tag">Ea Yông</span>
+
+                <span class="tag">Krông Pắc</span>
+
+                <span class="tag">Buôn Hồ</span>
+
+                <span class="tag">Buôn Ma Thuột</span>
+
+                <span class="tag">Các huyện khác</span>
+
+                <span class="tag">Tỉnh thành khác</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="map">
+
+            <iframe
+                src="https://www.google.com/maps?q=Ea%20Y%C3%B4ng%2C%20Kr%C3%B4ng%20P%E1%BA%AFc%2C%20%C4%90%E1%BA%AFk%20L%E1%BA%AFk&output=embed"
+                loading="lazy">
+            </iframe>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= BOOKING ================= -->
+
+<section id="contact">
+
+    <div class="booking">
+
+        <div>
+            <h2>ĐẶT XE NGAY</h2>
+
+            <p>
+                Gọi ngay – Có xe phục vụ nhanh chóng
+            </p>
+        </div>
+
+        <div>
+            <a
+                class="btn btn-call"
+                href="tel:0865759493">
+                ☎ GỌI NGAY
+            </a>
+
+            <div class="booking-phone">
+                086 575 9493
+            </div>
+        </div>
+
+        <div>
+            <a
+                class="btn btn-zalo"
+                href="https://zalo.me/0865759493"
+                target="_blank">
+                💬 ZALO TAXI
+            </a>
+
+            <p>
+                CƯỜNG EAYÔNG
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div>
+        🛡️ Tận Tâm – Nhanh Chóng –
+        Chuyên Nghiệp – An Toàn
+    </div>
+
+    <div>
+        ☎ 086 575 9493
+    </div>
+
+    <div>
+        📍 Ea Yông, Krông Pắc, Đắk Lắk
+    </div>
+
+</footer>
+
+</body>
+</html>
