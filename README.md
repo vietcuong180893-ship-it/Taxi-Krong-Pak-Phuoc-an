@@ -1,1 +1,0 @@
-<img src="taxi-accent-2024.jpg" alt="Taxi Cường EaYông - Accent 2024">
