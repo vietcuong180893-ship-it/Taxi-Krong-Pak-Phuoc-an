@@ -1,24 +1,221 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Taxi Krông Păk - Accent 2024</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Taxi Cường EaYông - Taxi Krông Pắc</title>
+
 <style>
-body{margin:0;font-family:Arial,sans-serif;background:#f4fbf5;color:#075b2c}
-img{width:100%;display:block}
-.bar{position:sticky;bottom:0;background:#075b2c;padding:12px;display:flex;gap:10px;justify-content:center}
-a{display:block;text-decoration:none;text-align:center;padding:14px 22px;border-radius:12px;font-weight:700}
-.call{background:#f2df00;color:#075b2c}.zalo{background:white;color:#075b2c}
-.note{text-align:center;padding:12px;background:white;font-weight:600}
-</style>
-</head>
-<body>
-<img src="banner.png" alt="Taxi Krông Păk - Accent 2024">
-<div class="note">Tận Tâm – Nhanh Chóng – Chuyên Nghiệp – An Toàn<br>Biển số: 47A-779.95</div>
-<div class="bar">
-<a class="call" href="tel:0865759493">📞 GỌI 086 575 9493</a>
-<a class="zalo" href="https://zalo.me/0865759493">💬 NHẮN ZALO</a>
-</div>
-</body>
-</html>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f1faF3;
+    color:#064d2d;
+}
+
+a{
+    text-decoration:none;
+}
+
+/* ===== HEADER ===== */
+
+header{
+    background:#00652f;
+    color:white;
+    padding:14px 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo-car{
+    font-size:42px;
+}
+
+.logo-text{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.logo-text span{
+    color:#ffe900;
+}
+
+nav{
+    display:flex;
+    gap:30px;
+}
+
+nav a{
+    color:white;
+    font-weight:bold;
+    padding:10px;
+}
+
+nav a:hover{
+    color:#ffe900;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+    min-height:500px;
+    background:
+    linear-gradient(90deg,
+    rgba(0,100,45,.95) 0%,
+    rgba(0,100,45,.7) 45%,
+    rgba(0,100,45,.15) 100%),
+    url("banner.png");
+
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    padding:50px 7%;
+}
+
+.hero-content{
+    max-width:520px;
+    color:white;
+}
+
+.hero h1{
+    font-size:70px;
+    font-weight:900;
+    font-style:italic;
+}
+
+.hero h2{
+    color:#fff000;
+    font-size:44px;
+    margin-bottom:20px;
+}
+
+.hero-badge{
+    display:inline-block;
+    border:2px solid white;
+    border-radius:12px;
+    padding:10px 20px;
+    font-size:21px;
+    font-weight:bold;
+    margin-bottom:18px;
+}
+
+.hero p{
+    font-size:22px;
+    line-height:1.6;
+    font-weight:bold;
+}
+
+.phone{
+    display:inline-block;
+    margin-top:20px;
+    padding:15px 25px;
+    border:2px solid white;
+    border-radius:14px;
+    font-size:34px;
+    font-weight:bold;
+    color:white;
+}
+
+/* ===== BUTTON ===== */
+
+.buttons{
+    display:flex;
+    gap:15px;
+    margin-top:18px;
+}
+
+.btn{
+    padding:16px 25px;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:bold;
+    display:inline-block;
+}
+
+.btn-call{
+    background:#fff000;
+    color:#075b2c;
+}
+
+.btn-zalo{
+    background:white;
+    color:#075b2c;
+}
+
+.btn:hover{
+    transform:scale(1.03);
+}
+
+/* ===== SECTION ===== */
+
+section{
+    padding:45px 5%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:36px;
+    color:#076332;
+    margin-bottom:30px;
+}
+
+/* ===== SERVICES ===== */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:20px;
+    text-align:center;
+}
+
+.service{
+    padding:20px 10px;
+}
+
+.icon{
+    width:75px;
+    height:75px;
+    margin:auto;
+    background:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:38px;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+}
+
+.service h3{
+    margin-top:15px;
+    font-size:17px;
+    line-height:1.4;
+}
+
+/* ===== CAR ===== */
+
+.car-section{
+    background:#dff2e4;
+    border:1px solid #8bc79b;
+    border-radius:15px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:30px;
+}
